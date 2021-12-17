@@ -1,0 +1,9 @@
+{
+  "name": "approuter-inetum-nodejs",
+  "dependencies": {
+      "@sap/approuter": "^9.0.2"
+  },
+  "scripts": {
+      "start": "node node_modules/@sap/approuter/approuter.js"
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"xsappname": "inetum-nodejs",
+	"tenant-mode": "dedicated",
+	"scopes": [
+		{
+			"name": "$XSAPPNAME.read",
+			"description": "With this scope, USER can read books."
+		}
+	],
+
+	"role-templates": [
+		{
+			"name": "Viewer",
+			"description": "Role to get the list of books",
+			"scope-references": [
+				"$XSAPPNAME.read"
+			]
+		}
+	],
+	"role-collections": [
+		{
+			"name": "BooksViewer",
+			"description": "Books Viewer",
+			"role-template-references": [
+				"$XSAPPNAME.Viewer"
+			]
+		}
+	]
+}

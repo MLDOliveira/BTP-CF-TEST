@@ -1,0 +1,7 @@
+{
+  "routes": [{
+    "source": "^/api/books",
+    "target": "/api/books",
+    "destination": "books-destination"
+  }]
+}

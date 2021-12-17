@@ -1,0 +1,31 @@
+
+applications:
+# Application
+- name: inetum-nodejs
+  instances: 1
+  memory: 128M
+  routes:
+    - route: inetum-nodejs.cfapps.us10.hana.ondemand.com
+  path: app
+  buildpacks:
+    - nodejs_buildpack 
+  services:
+    - xsuaa-service-books
+
+# Application Router
+- name: approuter-inetum-nodejs
+  routes:
+    - route: approuter-inetum-nodejs.cfapps.us10.hana.ondemand.com
+  path: approuter
+  buildpacks:
+    - nodejs_buildpack
+  memory: 128M
+  services:
+    - xsuaa-service-books
+  env:
+    destinations: >
+      [
+        {"name":"books-destination",
+         "url":"https://inetum-nodejs.cfapps.us10.hana.ondemand.com",
+         "forwardAuthToken": true}
+      ]

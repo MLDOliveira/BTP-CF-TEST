@@ -1,0 +1,50 @@
+<mvc:View
+    controllerName="com.inetum.inetumfront.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page title="{i18n>appTitle}" showHeader="true">
+                    <customHeader>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Title text="{i18n>appTitle}" level="H2"/>
+                            <ToolbarSpacer/>
+                            <Button type="Accept" press="onPressLoadData" text="{i18n>loadData}" />
+                        </Toolbar>
+                    </customHeader>
+
+                    <Table id="bookListTable" inset="false" items="{path:'oTableModel>/books'}" growing="true" growingThreshold="50">
+                        <columns>
+                            <Column>
+                                <Text text="{i18n>isbn}" />
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>title}" />
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>subtitle}" />
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>author}" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier title="{oTableModel>isbn}" />
+                                    <Text text="{oTableModel>title}" />
+                                    <Text text="{oTableModel>subtitle}" />
+                                    <Text text="{oTableModel>author}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
