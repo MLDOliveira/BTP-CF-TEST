@@ -1,4 +1,4 @@
-# Inetum Project Test
+# SAPUI5 App with NodeJS Project Test
 Create SAPUI5 + NodeJs Service on BTP Cloud Foundry
 
 # Basic Concept
